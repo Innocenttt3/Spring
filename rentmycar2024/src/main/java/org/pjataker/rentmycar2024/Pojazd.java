@@ -19,6 +19,7 @@ public abstract class Pojazd {
 //    }
 
     public abstract void wyswietl();
+
     public String getMarka() {
         return marka;
     }
