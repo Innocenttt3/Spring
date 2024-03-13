@@ -6,13 +6,9 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public interface IVehicleRepository {
-    void rentCar(int Id);
+    void rentVehicle(int Id);
 
-    void rentMotorcycle(int Id);
-
-    void returnCar(int Id);
-
-    void returnMotorcycle(int Id);
+    void returnVehicle(int Id);
 
     void getVehicles() throws FileNotFoundException, IOException, CsvValidationException;
 

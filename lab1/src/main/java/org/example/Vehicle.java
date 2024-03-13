@@ -6,6 +6,11 @@ public abstract class Vehicle {
     private final int year;
     private int price;
     private boolean rented;
+
+    public boolean isRented() {
+        return rented;
+    }
+
     private final int id;
 
     public int getId() {
