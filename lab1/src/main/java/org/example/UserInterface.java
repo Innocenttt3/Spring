@@ -49,9 +49,7 @@ public class UserInterface {
                     vehicleRepository.save();
                     System.out.println();
                 }
-                case 5 -> {
-                    System.out.println("Zegnaj");
-                }
+                case 5 -> System.out.println("Zegnaj");
                 default -> System.out.println("Brak takiej opcji");
             }
         }
