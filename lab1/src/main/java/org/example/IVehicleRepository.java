@@ -6,12 +6,16 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public interface IVehicleRepository {
-    void rentCar(Car car);
+    void rentCar(int Id);
 
-    void returnCar(Car car);
+    void rentMotorcycle(int Id);
 
-    void getVehicles(String path) throws FileNotFoundException, IOException, CsvValidationException;
+    void returnCar(int Id);
 
-    void save(String path);
+    void returnMotorcycle(int Id);
+
+    void getVehicles() throws FileNotFoundException, IOException, CsvValidationException;
+
+    void save() throws IOException;
 
 }

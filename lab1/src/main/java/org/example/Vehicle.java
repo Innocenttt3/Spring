@@ -8,6 +8,14 @@ public abstract class Vehicle {
     private boolean rented;
     private final int id;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setRented(boolean rented) {
+        this.rented = rented;
+    }
+
     public Vehicle(String brand, String model, int year, int price, boolean rented, int id) {
         this.brand = brand;
         this.model = model;

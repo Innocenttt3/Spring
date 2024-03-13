@@ -3,9 +3,7 @@ package org.example;
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvValidationException;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -20,18 +18,29 @@ public class VehicleRepository implements IVehicleRepository {
 
 
     @Override
-    public void rentCar(Car car) {
+    public void rentCar(int Id) {
 
     }
 
     @Override
-    public void returnCar(Car car) {
+    public void rentMotorcycle(int Id) {
 
     }
 
     @Override
-    public void getVehicles(String path) throws IOException, CsvValidationException {
-        try (CSVReader csvReader = new CSVReader(new FileReader(path))) {
+    public void returnCar(int Id) {
+
+    }
+
+    @Override
+    public void returnMotorcycle(int Id) {
+
+    }
+
+
+    @Override
+    public void getVehicles() throws IOException, CsvValidationException {
+        try (CSVReader csvReader = new CSVReader(new FileReader("/Users/kamilgolawski/Nauka/Programowanie/Spring/lab1/vehicles.csv"))) {
             String[] singleLine;
             while ((singleLine = csvReader.readNext()) != null) {
                 List<String> singleRecord = Arrays.asList(singleLine);
@@ -58,15 +67,27 @@ public class VehicleRepository implements IVehicleRepository {
     }
 
     @Override
-    public void save(String path) {
+    public void save() throws IOException {
+        FileWriter fileWriter = new FileWriter("/Users/kamilgolawski/Nauka/Programowanie/Spring/lab1/vehicles.csv");
+        PrintWriter printWriter = new PrintWriter(fileWriter);
+        for (Vehicle tmp : vehicles) {
+            printWriter.println(tmp.toCSV());
+        }
+        printWriter.close();
+    }
 
+    public void displayVehicles() {
+        for (Vehicle tmp : vehicles) {
+            System.out.println(tmp.toString());
+        }
     }
 
     public static void main(String[] args) throws CsvValidationException, IOException {
         VehicleRepository tmp = new VehicleRepository();
-        tmp.getVehicles("/Users/kamilgolawski/Nauka/Programowanie/Spring/lab1/vehicles.csv");
+        tmp.getVehicles();
         for (Vehicle vehicle : tmp.vehicles) {
             System.out.println(vehicle.toString());
         }
+        tmp.save();
     }
 }

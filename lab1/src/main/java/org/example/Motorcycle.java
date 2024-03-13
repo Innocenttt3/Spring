@@ -8,4 +8,14 @@ public class Motorcycle extends Vehicle {
         super(brand, model, year, price, rented, id);
         this.category = Category;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + ", category: " + category;
+    }
+
+    @Override
+    public String toCSV() {
+        return super.toCSV() + ":" + category;
+    }
 }
