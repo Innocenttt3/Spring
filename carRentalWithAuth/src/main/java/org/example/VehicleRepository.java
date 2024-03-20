@@ -34,7 +34,6 @@ public class VehicleRepository implements IVehicleRepository {
         }
     }
 
-
     @Override
     public void returnVehicle(int Id) {
         boolean vehicleFound = false;
@@ -106,6 +105,8 @@ public class VehicleRepository implements IVehicleRepository {
         }
         printWriter.close();
     }
+
+
 
     public void displayAllVehicles() {
         for (Vehicle tmp : vehicles) {
