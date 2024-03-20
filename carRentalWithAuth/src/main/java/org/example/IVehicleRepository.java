@@ -12,6 +12,10 @@ public interface IVehicleRepository {
 
     void getVehicles() throws IOException, CsvValidationException;
 
+    void addVehicle(Vehicle vehicle);
+
+    void removeVehicle(int id);
+
     void save() throws IOException;
 
 }

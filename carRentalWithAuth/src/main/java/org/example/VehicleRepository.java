@@ -55,7 +55,7 @@ public class VehicleRepository implements IVehicleRepository {
     public void getVehicles() throws IOException, CsvValidationException {
         CSVParser parser = new CSVParserBuilder().withSeparator(';').build();
         try (
-                FileReader filereader = new FileReader("/Users/kamilgolawski/Nauka/Programowanie/Spring/lab1/vehicles.csv");
+                FileReader filereader = new FileReader("/Users/kamilgolawski/Nauka/Programowanie/Spring/carRentalWithAuth/vehicles.csv");
                 CSVReader csvReader = new CSVReaderBuilder(filereader)
                         .withCSVParser(parser)
                         .build()){
@@ -86,10 +86,20 @@ public class VehicleRepository implements IVehicleRepository {
         }
     }
 
+    @Override
+    public void addVehicle(Vehicle vehicle) {
+        vehicles.add(vehicle);
+    }
+
+    @Override
+    public void removeVehicle(int id) {
+        vehicles.removeIf(v -> v.getId() == id);
+    }
+
 
     @Override
     public void save() throws IOException {
-        FileWriter fileWriter = new FileWriter("/Users/kamilgolawski/Nauka/Programowanie/Spring/lab1/vehicles.csv");
+        FileWriter fileWriter = new FileWriter("/Users/kamilgolawski/Nauka/Programowanie/Spring/carRentalWithAuth/vehicles.csv");
         PrintWriter printWriter = new PrintWriter(fileWriter);
         for (Vehicle tmp : vehicles) {
             printWriter.println(tmp.toCSV());
