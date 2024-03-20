@@ -10,7 +10,7 @@ public interface IVehicleRepository {
 
     void returnVehicle(int Id);
 
-    void getVehicles() throws FileNotFoundException, IOException, CsvValidationException;
+    void getVehicles() throws IOException, CsvValidationException;
 
     void save() throws IOException;
 

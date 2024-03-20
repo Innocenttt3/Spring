@@ -4,7 +4,7 @@ public abstract class Vehicle {
     private final String brand;
     private final String model;
     private final int year;
-    private int price;
+    private final int price;
     private boolean rented;
 
     public boolean isRented() {

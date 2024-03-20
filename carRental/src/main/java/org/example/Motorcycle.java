@@ -1,7 +1,7 @@
 package org.example;
 
 public class Motorcycle extends Vehicle {
-    private String category;
+    private final String category;
 
 
     public Motorcycle(String brand, String model, int year, int price, boolean rented, int id, String Category) {
