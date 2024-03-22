@@ -38,4 +38,7 @@ public class User {
     public String toString() {
         return "login: " + login + " password: " + password + " idOfRentedVehicle: " + idOfRentedVehicle + " adminPermission: " + adminPermission;
     }
+    public String displayInfo() {
+        return "login: " + login + " password: " + password + " idOfRentedVehicle: " + idOfRentedVehicle;
+    }
 }

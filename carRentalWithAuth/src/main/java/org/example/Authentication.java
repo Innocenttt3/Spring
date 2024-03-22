@@ -13,6 +13,10 @@ public class Authentication {
         return userRepository.getUser(currentLogin).isAdminPermission();
     }
 
+    public String getCurrentLogin() {
+        return currentLogin;
+    }
+
     public boolean userValidate() {
         Scanner scanner = new Scanner(System.in);
         String inputLogin, inputPassword;
