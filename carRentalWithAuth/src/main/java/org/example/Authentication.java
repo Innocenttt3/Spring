@@ -1,6 +1,12 @@
 package org.example;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 public class Authentication {
     private UserRepository userRepository;
@@ -9,12 +15,47 @@ public class Authentication {
     public Authentication(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
+
     public boolean typeOfAccount() {
         return userRepository.getUser(currentLogin).isAdminPermission();
     }
 
     public String getCurrentLogin() {
         return currentLogin;
+    }
+
+    public void creatUser(String username, String password, boolean isAdmin, Integer idOfRentedCard, String path) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(path, true))) {
+
+            String adminHashedPassword = getSHA256Hash(password);
+            if (idOfRentedCard == null) {
+                writer.write(username + ";" + adminHashedPassword + ";" + isAdmin);
+            } else {
+                writer.write(username + ";" + adminHashedPassword + ";" + isAdmin + ";" + idOfRentedCard);
+            }
+            writer.newLine();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static String getSHA256Hash(String password) {
+        try {
+            MessageDigest digest = MessageDigest.getInstance("SHA-256");
+            byte[] encodedHash = digest.digest(password.getBytes(StandardCharsets.UTF_8));
+            StringBuilder hexString = new StringBuilder();
+            for (byte b : encodedHash) {
+                String hex = Integer.toHexString(0xff & b);
+                if (hex.length() == 1) {
+                    hexString.append('0');
+                }
+                hexString.append(hex);
+            }
+            return hexString.toString();
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public boolean userValidate() {
@@ -35,7 +76,8 @@ public class Authentication {
                 while (!passwordCorrect && attempts < maxAttempts) {
                     System.out.print("Podaj hasło: ");
                     inputPassword = scanner.nextLine();
-                    passwordCorrect = user.getPassword().equals(inputPassword);
+                    String hashedInputPassword = getSHA256Hash(inputPassword);
+                    passwordCorrect = user.getPassword().equals(hashedInputPassword);
 
                     if (!passwordCorrect) {
                         System.out.println("Nieprawidłowe hasło, spróbuj ponownie.");

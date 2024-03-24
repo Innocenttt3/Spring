@@ -48,6 +48,15 @@ public class VehicleRepository implements IVehicleRepository {
             System.out.println("Nie znaleziono pojazdu o ID: " + Id + " lub pojazd nie jest wynajęty.");
         }
     }
+    public boolean vehicleExist(int Id) {
+        for (Vehicle vehicle : vehicles) {
+            if (vehicle.getId() == Id) {
+                System.out.println("Pojazd o tym ID juz istnieje podaj inne:");
+                return true;
+            }
+        }
+        return false;
+    }
 
 
     @Override

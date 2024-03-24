@@ -12,6 +12,10 @@ public class UserInterface {
         VehicleRepository vehicleRepository = new VehicleRepository();
         UserRepository userRepository = new UserRepository();
         Authentication authenticator = new Authentication(userRepository);
+        //use only to create new users
+        //authenticator.creatUser("admin", "admin123", true, null,"/Users/kamilgolawski/Nauka/Programowanie/Spring/carRentalWithAuth/users.csv");
+        //authenticator.creatUser("kamil", "mleko123", false, 1,"/Users/kamilgolawski/Nauka/Programowanie/Spring/carRentalWithAuth/users.csv");
+        userRepository.getUsers();
         int firstInput = 0;
         Scanner firstScanner = new Scanner(System.in);
         while (firstInput != 2) {
@@ -60,8 +64,11 @@ public class UserInterface {
                                             throw new InvalidRentedStatusException("nie obslugiwana odpowiedz");
                                         }
                                         System.out.print("unique id: ");
-                                        int uniqueId = scanner.nextInt();
-                                        scanner.nextLine();
+                                        int uniqueId;
+                                        do {
+                                            uniqueId = scanner.nextInt();
+                                            scanner.nextLine();
+                                        } while (vehicleRepository.vehicleExist(uniqueId));
                                         System.out.println("opcjonalne (podaj w przypadku motoru) kategoria:");
                                         String category = scanner.nextLine();
                                         if (category.isEmpty()) {
