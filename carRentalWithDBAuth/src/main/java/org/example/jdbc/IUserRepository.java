@@ -8,9 +8,9 @@ import java.util.Collection;
 
 public interface IUserRepository {
     User getUser(String login);
-    void addUser(User user);
-
-    void removeUser(String login);
+    void removeUser(String login) throws SQLException;
     void getAllUsers() throws SQLException;
+    void saveUsers() throws SQLException;
+    void addUser(String username, String password, boolean isAdmin, Integer idOfRentedCard) throws SQLException;
 
 }

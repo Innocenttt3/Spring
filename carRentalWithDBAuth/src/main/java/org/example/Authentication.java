@@ -42,7 +42,7 @@ public class Authentication {
         }
     }
 
-    private static String getSHA256Hash(String password) {
+    public static String getSHA256Hash(String password) {
         try {
             MessageDigest digest = MessageDigest.getInstance("SHA-256");
             byte[] encodedHash = digest.digest(password.getBytes(StandardCharsets.UTF_8));

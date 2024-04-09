@@ -14,6 +14,10 @@ public class User {
         return login;
     }
 
+    public Integer getIdOfRentedVehicle() {
+        return idOfRentedVehicle;
+    }
+
     public String getPassword() {
         return password;
     }

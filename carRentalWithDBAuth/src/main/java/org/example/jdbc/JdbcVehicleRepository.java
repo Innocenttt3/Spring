@@ -14,7 +14,6 @@ public class JdbcVehicleRepository implements IVehicleRepository {
     public Collection<Vehicle> vehicles;
     private final String GET_ALL_VEHICLE_SQL = "SELECT * FROM lab4Zad.vehicle";
     private final String INSERT_VEHICLE_SQL = "INSERT INTO lab4Zad.vehicle (brand, model, year, price, id, isRented) VALUES (?,?,?,?,?, ?)";
-    ;
 
     public static JdbcVehicleRepository getInstance() {
         if (JdbcVehicleRepository.instance == null) {
@@ -23,7 +22,7 @@ public class JdbcVehicleRepository implements IVehicleRepository {
         return instance;
     }
 
-    private JdbcVehicleRepository() {
+    public JdbcVehicleRepository() {
         this.databaseManager = DatabaseManager.getInstance();
         this.vehicles = new ArrayList<>();
     }
@@ -90,9 +89,9 @@ public class JdbcVehicleRepository implements IVehicleRepository {
             statement.setBoolean(6, tmp.isRented());
             int changed = statement.executeUpdate();
             if (changed  > 0) {
-                System.out.println("Pojazd został pomyślnie dodany.");
+                System.out.println("Pojazdy zostały pomyślnie dodane.");
             } else {
-                System.out.println("Nie udało się dodać pojazdu.");
+                System.out.println("Nie udało się dodać pojazdów.");
             }
         }
 
@@ -131,6 +130,29 @@ public class JdbcVehicleRepository implements IVehicleRepository {
     @Override
     public void addVehicle(Vehicle vehicle) {
         vehicles.add(vehicle);
+    }
+
+    public void displayAllVehicles() {
+        for (Vehicle tmp : vehicles) {
+            System.out.println(tmp.toString());
+        }
+    }
+
+    public void displayAllAvailableVehicles() {
+        for (Vehicle tmp : vehicles) {
+            if (!tmp.isRented())
+                System.out.println(tmp.toString());
+        }
+    }
+
+    public boolean vehicleExist(int Id) {
+        for (Vehicle vehicle : vehicles) {
+            if (vehicle.getId() == Id) {
+                System.out.println("Pojazd o tym ID juz istnieje podaj inne:");
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override
