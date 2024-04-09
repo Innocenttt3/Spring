@@ -1,4 +1,4 @@
-package org.example;
+package org.example.jdbc;
 
 import org.example.vehicles.Car;
 import org.example.vehicles.Motorcycle;
@@ -13,7 +13,7 @@ public class JdbcVehicleRepository implements IVehicleRepository {
     private final DatabaseManager databaseManager;
     public Collection<Vehicle> vehicles;
     private final String GET_ALL_VEHICLE_SQL = "SELECT * FROM lab4Zad.vehicle";
-    private final String INSERT_VEHICLE_SQL = "INSERT INTO lab4Zad.vehicle (brand, model, year, price, id, isRented) VALUES (?, ?, ?, ?, ?, ?,)";
+    private final String INSERT_VEHICLE_SQL = "INSERT INTO lab4Zad.vehicle (brand, model, year, price, id, isRented) VALUES (?,?,?,?,?, ?)";
     ;
 
     public static JdbcVehicleRepository getInstance() {
@@ -30,7 +30,7 @@ public class JdbcVehicleRepository implements IVehicleRepository {
 
 
     @Override
-    public void getALlVehicles() {
+    public void getAllVehicles() {
         Collection<Vehicle> vehiclesFetched = new ArrayList<>();
         Connection connection = null;
         ResultSet resultSet = null;
@@ -82,8 +82,12 @@ public class JdbcVehicleRepository implements IVehicleRepository {
         Connection connection = databaseManager.getConnection();
         for (Vehicle tmp : vehicles) {
             PreparedStatement statement = connection.prepareStatement(INSERT_VEHICLE_SQL);
-            statement.setString(1, tmp.toDb());
-            System.out.println(statement.toString());
+            statement.setString(1, tmp.getBrand());
+            statement.setString(2, tmp.getModel());
+            statement.setInt(3, tmp.getYear());
+            statement.setInt(4, tmp.getPrice());
+            statement.setInt(5, tmp.getId());
+            statement.setBoolean(6, tmp.isRented());
             int changed = statement.executeUpdate();
             if (changed  > 0) {
                 System.out.println("Pojazd został pomyślnie dodany.");
@@ -136,7 +140,7 @@ public class JdbcVehicleRepository implements IVehicleRepository {
 
     public static void main(String[] args) throws SQLException {
         JdbcVehicleRepository tmp = new JdbcVehicleRepository();
-        Car testowe = new Car("test", "test", 2000, 120, false, 3);
+        Car testowe = new Car("test", "test", 2000, 120, false, 2137);
         tmp.vehicles.add(testowe);
         tmp.save();
 

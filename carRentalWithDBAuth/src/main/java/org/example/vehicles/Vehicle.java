@@ -6,12 +6,27 @@ public abstract class Vehicle {
     private final int year;
     private final int price;
     private boolean rented;
+    private final int id;
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public int getPrice() {
+        return price;
+    }
 
     public boolean isRented() {
         return rented;
     }
-
-    private final int id;
 
     public int getId() {
         return id;

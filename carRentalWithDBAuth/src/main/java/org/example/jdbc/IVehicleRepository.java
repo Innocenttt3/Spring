@@ -1,4 +1,4 @@
-package org.example;
+package org.example.jdbc;
 
 import org.example.vehicles.Vehicle;
 
@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 public interface IVehicleRepository {
 
-    void getALlVehicles();
+    void getAllVehicles();
 
     void rentVehicle(int Id);
 
