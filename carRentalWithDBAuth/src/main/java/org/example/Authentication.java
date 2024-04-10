@@ -26,22 +26,6 @@ public class Authentication {
         return currentLogin;
     }
 
-    public void creatUser(String username, String password, boolean isAdmin, Integer idOfRentedCard, String path) {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(path, true))) {
-
-            String adminHashedPassword = getSHA256Hash(password);
-            if (idOfRentedCard == null) {
-                writer.write(username + ";" + adminHashedPassword + ";" + isAdmin);
-            } else {
-                writer.write(username + ";" + adminHashedPassword + ";" + isAdmin + ";" + idOfRentedCard);
-            }
-            writer.newLine();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
     public static String getSHA256Hash(String password) {
         try {
             MessageDigest digest = MessageDigest.getInstance("SHA-256");

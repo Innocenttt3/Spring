@@ -71,7 +71,11 @@ public class JdbcUserRepository implements IUserRepository {
         statement.setString(1, username);
         String hashedPassword = Authentication.getSHA256Hash(password);
         statement.setString(2, hashedPassword);
-        statement.setInt(3, idOfRentedCard);
+        if (idOfRentedCard == null) {
+            statement.setNull(3, Types.INTEGER);
+        } else {
+            statement.setInt(3, idOfRentedCard);
+        }
         statement.setBoolean(4, isAdmin);
         int changed = statement.executeUpdate();
         if (changed  > 0) {

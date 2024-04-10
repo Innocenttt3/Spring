@@ -18,8 +18,8 @@ public class UserInterface {
         JdbcUserRepository userRepository = new JdbcUserRepository();
         Authentication authenticator = new Authentication(userRepository);
         //use only to create new users
-        //authenticator.creatUser("admin", "admin123", true, null,"/Users/kamilgolawski/Nauka/Programowanie/Spring/carRentalWithAuth/users.csv");
-        //authenticator.creatUser("kamil", "mleko123", false, 1,"/Users/kamilgolawski/Nauka/Programowanie/Spring/carRentalWithAuth/users.csv");
+        //userRepository.addUser("admin", "admin123", true, null);
+        //userRepository.addUser("kamil", "mleko123", false, 1);
         userRepository.getAllUsers();
         int firstInput = 0;
         Scanner firstScanner = new Scanner(System.in);
