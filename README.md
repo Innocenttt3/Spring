@@ -21,3 +21,5 @@ This repository is dedicated to storing all the projects created during the clas
 4. **Simple Car Rental with Console UI**
    - [Link to directory](https://github.com/Innocenttt3/Spring/tree/master/carRental)
    First task was to create most simple rental to remind basics
+
+This repository is continuously evolving as the course progresses.
