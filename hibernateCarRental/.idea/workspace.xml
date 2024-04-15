@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="5dd5c0b2-572e-4296-8732-3384e96d824c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../carRentalHibernate/hibernate_car_rent/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../carRentalHibernate/hibernate_car_rent/.idea/workspace.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../exampleFromLab/rent_car_stud" beforeDir="false" afterPath="$PROJECT_DIR$/../exampleFromLab/rent_car_stud" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -14,9 +15,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2f8q0DH7RGQFZf4LL9mvO8xwNcs" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -28,6 +29,10 @@
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/kamilgolawski/Nauka/Programowanie/Spring/hibernateCarRental",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
@@ -37,6 +42,7 @@
       <set>
         <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
         <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+        <option value="jdk-20.0.2-azul-20.0.2-5b172459f563-8dac28e5" />
       </set>
     </attachedChunks>
   </component>
@@ -49,6 +55,7 @@
       <option name="presentableId" value="Default" />
       <updated>1713192827215</updated>
       <workItem from="1713192828211" duration="6000" />
+      <workItem from="1713192965924" duration="305000" />
     </task>
     <servers />
   </component>
