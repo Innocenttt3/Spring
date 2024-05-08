@@ -5,20 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5dd5c0b2-572e-4296-8732-3384e96d824c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../carRentalHibernateOwn/src/main/java/org/kamilG/configuration/Authenticator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../carRentalHibernateOwn/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../carRentalHibernateOwn/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../carRentalHibernateOwn/src/main/java/org/kamilG/dao/IUserRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../carRentalHibernateOwn/src/main/java/org/kamilG/dao/IUserRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../carRentalHibernateOwn/src/main/java/org/kamilG/dao/hibernate/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../carRentalHibernateOwn/src/main/java/org/kamilG/dao/hibernate/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../carRentalHibernateOwn/src/main/java/org/kamilG/dao/hibernate/VehicleDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../carRentalHibernateOwn/src/main/java/org/kamilG/dao/hibernate/VehicleDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../carRentalHibernateOwn/src/main/java/org/kamilG/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../carRentalHibernateOwn/src/main/java/org/kamilG/main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../carRentalHibernateOwn/src/main/java/org/kamilG/units/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/../carRentalHibernateOwn/src/main/java/org/kamilG/units/Car.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../carRentalHibernateOwn/src/main/java/org/kamilG/units/Motorcycle.java" beforeDir="false" afterPath="$PROJECT_DIR$/../carRentalHibernateOwn/src/main/java/org/kamilG/units/Motorcycle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../carRentalHibernateOwn/src/main/java/org/kamilG/units/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../carRentalHibernateOwn/src/main/java/org/kamilG/units/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../carRentalHibernateOwn/src/main/java/org/kamilG/units/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/../carRentalHibernateOwn/src/main/java/org/kamilG/units/Vehicle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../carRentalWithDBAuth/src/main/java/org/example/InvalidRentedStatusException.java" beforeDir="false" afterPath="$PROJECT_DIR$/../carRentalHibernateOwn/src/main/java/org/kamilG/InvalidRentedStatusException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../exampleFromLab/rent_car_stud" beforeDir="false" afterPath="$PROJECT_DIR$/../exampleFromLab/rent_car_stud" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate_car_rent/src/main/java/org/example/authenticate/Authenticator.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +64,8 @@
       <workItem from="1715014101629" duration="11837000" />
       <workItem from="1715082384275" duration="8149000" />
       <workItem from="1715152235267" duration="243000" />
-      <workItem from="1715152488144" duration="11178000" />
+      <workItem from="1715152488144" duration="11540000" />
+      <workItem from="1715182968837" duration="85000" />
     </task>
     <servers />
   </component>

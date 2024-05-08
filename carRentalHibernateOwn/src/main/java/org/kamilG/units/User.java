@@ -1,6 +1,8 @@
 package org.kamilG.units;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.JdbcType;
+import org.hibernate.dialect.PostgreSQLEnumJdbcType;
 
 @Entity
 @Table(name = "Users", schema = "lab")
@@ -13,7 +15,8 @@ public class User {
   private Vehicle rentedVehicle;
 
   @Enumerated(EnumType.STRING)
-  @Column(name = "adminPermission", columnDefinition = "lab.adminPermission_enum")
+  @JdbcType(PostgreSQLEnumJdbcType.class)
+  @Column(name = "adminpermission")
   private Role role;
 
   public User() {}
