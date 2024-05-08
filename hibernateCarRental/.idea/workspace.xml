@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5dd5c0b2-572e-4296-8732-3384e96d824c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../carRentalWithDBAuth/src/main/java/org/example/jdbc/DatabaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/../carRentalWithDBAuth/src/main/java/org/example/jdbc/DatabaseManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../exampleFromLab/rent_car_stud" beforeDir="false" afterPath="$PROJECT_DIR$/../exampleFromLab/rent_car_stud" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate_car_rent/src/main/java/org/example/model/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate_car_rent/src/main/java/org/example/model/Vehicle.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,25 +27,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/kamilgolawski/Nauka/Programowanie/Spring/hibernateCarRental",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/kamilgolawski/Nauka/Programowanie/Spring/hibernateCarRental&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
-        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
+        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
         <option value="jdk-20.0.2-azul-20.0.2-5b172459f563-8dac28e5" />
       </set>
     </attachedChunks>
@@ -56,10 +60,29 @@
       <updated>1713192827215</updated>
       <workItem from="1713192828211" duration="6000" />
       <workItem from="1713192965924" duration="305000" />
+      <workItem from="1715003371455" duration="1675000" />
+      <workItem from="1715006397874" duration="4000" />
+      <workItem from="1715006560390" duration="230000" />
+      <workItem from="1715007249554" duration="114000" />
+      <workItem from="1715014101629" duration="11837000" />
+      <workItem from="1715082384275" duration="8149000" />
+      <workItem from="1715152235267" duration="243000" />
+      <workItem from="1715152488144" duration="316000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

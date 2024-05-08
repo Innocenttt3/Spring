@@ -7,7 +7,7 @@ This repository is dedicated to storing all the projects created during the clas
 ## Projects
 
 1. **Improved Car Rental with hibernate, authentication**
-   - [Link to directory](link_to_project_2_folder)
+   - [Link to directory](https://github.com/Innocenttt3/Spring/tree/master/hibernateCarRental/hibernate_car_rent)
    Improved version of Rental with integration of hibernate
 
 2. **Car Rental using JDBC**

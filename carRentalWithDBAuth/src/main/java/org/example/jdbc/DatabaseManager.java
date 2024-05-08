@@ -12,6 +12,9 @@ public class DatabaseManager {
     public static DatabaseManager getInstance() {
         if(DatabaseManager.instace==null){
             DatabaseManager.instace = new DatabaseManager();
+
+
+
         }
         return DatabaseManager.instace;
     }

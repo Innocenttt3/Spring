@@ -17,7 +17,7 @@ public abstract class Vehicle {
     private String plate;
     @Convert(converter = BooleanToShortConventer.class)
     private boolean rent;
-    @OneToOne(mappedBy = "vehicle", fetch = FetchType.EAGER)
+    @OneToOne (mappedBy = "vehicle", fetch = FetchType.EAGER)
     private User user;
 
     public Vehicle(String brand, String model, int year, double price, String plate) {
