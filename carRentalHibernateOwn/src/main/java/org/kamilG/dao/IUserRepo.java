@@ -5,11 +5,11 @@ import org.kamilG.units.User;
 import java.util.Collection;
 
 public interface IUserRepo {
-    User getUser(long id);
+    User getUser(String login);
 
     void addUser(User user);
 
-    void removeUser(long id);
+    void removeUser(String login);
 
     Collection<User> getUsers();
 }

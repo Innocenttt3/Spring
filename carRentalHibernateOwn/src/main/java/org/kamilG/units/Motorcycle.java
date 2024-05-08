@@ -8,12 +8,16 @@ import jakarta.persistence.Entity;
 public class Motorcycle extends Vehicle {
     private String category;
 
-    public Motorcycle(int id, String brand, String model, int year, int price, String category) {
-        super(id, brand, model, year, price);
+    public Motorcycle(int id, String brand, String model, int year, int price,boolean isRented, String category) {
+        super(id, brand, model, year, price, isRented);
         this.category = category;
     }
 
     public Motorcycle() {
 
+    }
+    @Override
+    public String toString() {
+        return "Motorcycle - " + super.toString() + ", category: " + category;
     }
 }

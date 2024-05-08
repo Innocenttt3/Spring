@@ -7,12 +7,14 @@ import jakarta.persistence.Entity;
 @DiscriminatorValue("CAR")
 public class Car extends Vehicle {
 
-    public Car(int id, String brand, String model, int year, int price) {
-        super(id, brand, model, year, price);
-    }
+  public Car(int id, String brand, String model, int year, int price, boolean isRented) {
+    super(id, brand, model, year, price, isRented);
+  }
 
-    public Car() {
+  public Car() {}
 
-    }
-
+  @Override
+  public String toString() {
+    return "Car - " + super.toString();
+  }
 }

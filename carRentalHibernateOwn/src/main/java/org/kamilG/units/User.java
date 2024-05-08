@@ -5,49 +5,53 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "Users", schema = "lab")
 public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+  @Id private String login;
+  private String password;
 
-    private String login;
-    private String password;
+  @OneToOne(fetch = FetchType.EAGER)
+  @JoinColumn(name = "idOfRentedVehicle", referencedColumnName = "id")
+  private Vehicle rentedVehicle;
 
-    @OneToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "idOfRentedVehicle", referencedColumnName = "id")
-    private Vehicle rentedVehicle;
+  @Enumerated(EnumType.STRING)
+  @Column(name = "adminPermission", columnDefinition = "lab.adminPermission_enum")
+  private Role role;
 
-    @Column(name = "adminPermission")
-    @Enumerated(EnumType.STRING)
-    private Role role;
+  public User() {}
 
-    public User() {
-    }
+  public User(String login, String password) {
+    this.login = login;
+    this.password = password;
+    this.rentedVehicle = null;
+    this.role = Role.USER;
+  }
 
-    public User(int id, String login, String password, Role role) {
-        this.id = id;
-        this.login = login;
-        this.password = password;
-        this.rentedVehicle = null;
-        this.role = role;
-    }
+  public enum Role {
+    USER,
+    ADMIN;
+  }
 
-    public User(int id, String login, String password) {
-        this.id = id;
-        this.login = login;
-        this.password = password;
-        this.rentedVehicle = null;
-        this.role = Role.USER;
-    }
+  public void setRentedVehicle(Vehicle rentedVehicle) {
+    this.rentedVehicle = rentedVehicle;
+  }
 
-    public enum Role {
-        USER, ADMIN;
-    }
+  public Vehicle getRentedVehicle() {
+    return rentedVehicle;
+  }
 
-    public void setRentedVehicle(Vehicle rentedVehicle) {
-        this.rentedVehicle = rentedVehicle;
-    }
+  public Role getRole() {
+    return role;
+  }
 
-    public Vehicle getRentedVehicle() {
-        return rentedVehicle;
-    }
+  public String getPassword() {
+    return password;
+  }
+
+  public String getLogin() {
+    return login;
+  }
+
+  @Override
+  public String toString() {
+    return "login: " + login + ", password: " + password + ", role: " + role;
+  }
 }

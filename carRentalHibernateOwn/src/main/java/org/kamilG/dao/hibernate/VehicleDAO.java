@@ -31,7 +31,7 @@ public class VehicleDAO implements org.kamilG.dao.IVehicleRepo {
         Transaction transaction = null;
         try {
             transaction = session.beginTransaction();
-            session.persist(vehicle);
+            session.merge(vehicle);
             transaction.commit();
         } catch (RuntimeException e) {
             if (transaction != null) {
