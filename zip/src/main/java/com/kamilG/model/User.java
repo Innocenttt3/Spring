@@ -6,7 +6,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "users")
+@Table(name = "labjpa.users", schema = "labjpa")
 public class User {
 
   @Id
@@ -20,9 +20,22 @@ public class User {
 
   @ManyToMany(fetch = FetchType.EAGER)
   @JoinTable(
-          name = "user_roles",
-          joinColumns = @JoinColumn(name = "user_id"),
-          inverseJoinColumns = @JoinColumn(name = "role_id")
+          name = "labjpa.user_roles",
+          schema = "labjpa",
+          joinColumns = @JoinColumn(name = "labjpa.user_id"),
+          inverseJoinColumns = @JoinColumn(name = "labjpa.role_id")
   )
   private Set<Role> roles = new HashSet<>();
+
+  public @NotBlank(message = "Haslo jest wymagane") String getPassword() {
+    return password;
+  }
+
+  public @NotBlank(message = "Nazwa uzytkownika jest wymagana") String getUsername() {
+    return username;
+  }
+
+  public Set<Role> getRoles() {
+    return roles;
+  }
 }
