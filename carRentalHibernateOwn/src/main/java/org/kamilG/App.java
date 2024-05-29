@@ -137,6 +137,7 @@ public class App {
                 commandInput = scanner.nextInt();
                 switch (commandInput) {
                   case 1 -> {
+                    
                     System.out.println("Wszystkie auta w wypozyczalni");
 
                     System.out.println();
