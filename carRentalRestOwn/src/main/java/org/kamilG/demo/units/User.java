@@ -7,7 +7,7 @@ import org.hibernate.dialect.PostgreSQLEnumJdbcType;
 
 @Setter
 @Entity
-@Table(name = "Users", schema = "restApi")
+@Table(name = "Users", schema = "lab")
 public class User {
   @Id private String login;
   private String password;

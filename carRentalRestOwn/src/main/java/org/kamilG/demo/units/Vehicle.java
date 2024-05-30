@@ -3,7 +3,7 @@ package org.kamilG.demo.units;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "Vehicles", schema = "restApi")
+@Table(name = "Vehicles", schema = "lab")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "vehicle_type", discriminatorType = DiscriminatorType.STRING)
 public abstract class Vehicle {
