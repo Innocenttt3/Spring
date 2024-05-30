@@ -6,7 +6,7 @@ import org.kamilG.demo.units.User;
 public interface IUserRepo {
     User getUser(String login);
 
-    void addUser(User user);
+    boolean addUser(User user);
 
     void removeUser(String login);
 

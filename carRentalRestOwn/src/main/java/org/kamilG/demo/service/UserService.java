@@ -1,5 +1,7 @@
 package org.kamilG.demo.service;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import lombok.AllArgsConstructor;
 import org.kamilG.demo.dao.IUserRepo;
 import org.kamilG.demo.dto.CreateUserDto;
@@ -7,12 +9,11 @@ import org.kamilG.demo.dto.UserDto;
 import org.kamilG.demo.units.User;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Collection;
-
 @Service
 @AllArgsConstructor
 public class UserService {
+
+
   private final IUserRepo userRepo;
 
   public Collection<UserDto> getAllUsers() {
@@ -35,7 +36,7 @@ public class UserService {
     }
   }
 
-  public UserDto createUser(CreateUserDto createUserDto) {
+  public boolean createUser(CreateUserDto createUserDto) {
     User newUser = new User();
     newUser.setLogin(createUserDto.getLogin());
     newUser.setPassword(createUserDto.getPassword());
@@ -43,6 +44,21 @@ public class UserService {
     if (userRepo.addUser(newUser)) {
       System.out.println("user added");
       return true;
+    } else {
+      System.out.println("user not added");
+      return false;
+    }
+  }
+
+  public String deleteUser(String login) {
+    User userToDelete = userRepo.getUser(login);
+    if (userToDelete == null) {
+      return "not found";
+    } else if (userToDelete.getRentedVehicle() != null) {
+      return "vehicle is not null";
+    } else {
+      userRepo.removeUser(login);
+      return "user removed";
     }
   }
 }

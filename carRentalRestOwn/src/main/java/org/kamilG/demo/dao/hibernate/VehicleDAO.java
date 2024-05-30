@@ -7,7 +7,9 @@ import org.hibernate.Transaction;
 import org.kamilG.demo.dao.IVehicleRepo;
 import org.kamilG.demo.units.User;
 import org.kamilG.demo.units.Vehicle;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class VehicleDAO implements IVehicleRepo {
 
     private static VehicleDAO instance;
