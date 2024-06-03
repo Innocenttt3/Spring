@@ -44,6 +44,6 @@ public class UserService implements IUserService {
       user.getRoles().add(newUserRole);
     }
     userRepository.save(user);
-    return "Success";
+    return "success";
   }
 }

@@ -12,6 +12,7 @@ public class LoginController {
   public String login(
       @RequestParam(value = "error", required = false) String errorMessage,
       @RequestParam(value = "logout", required = false) String logoutMessage,
+      @RequestParam(value = "registerMessage", required = false) String registerMessage,
       Model model) {
 
     if (errorMessage != null) {
@@ -20,6 +21,9 @@ public class LoginController {
 
     if (logoutMessage != null) {
       model.addAttribute("logoutMessage", "wylogowano");
+    }
+    if (registerMessage != null) {
+      model.addAttribute("registerMessage", registerMessage);
     }
 
     return "login";

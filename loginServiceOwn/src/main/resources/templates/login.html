@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Login</title>
@@ -6,7 +7,7 @@
 <h1>Logowanie</h1>
 <div th:if="${errorMessage}" th:text="${errorMessage}"></div>
 <div th:if="${logoutMessage}" th:text="${logoutMessage}"></div>
-<div th:if="${message}" th:text="${message}"></div>
+<div th:if="${registerMessage}" th:text="${registerMessage}"></div>
 <form th:action="@{/login}" method="post">
     <div>
         <label for="username">Nazwa użytkownika:</label>
