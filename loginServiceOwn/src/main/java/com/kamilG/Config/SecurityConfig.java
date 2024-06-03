@@ -17,14 +17,14 @@ public class SecurityConfig {
   public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
     http.authorizeHttpRequests(
             auth ->
-                auth.requestMatchers("/login", "/register")
-                    .permitAll()
+                auth.requestMatchers("/login", "/register").permitAll()
+                    .requestMatchers("/admin/**").hasAuthority("ADMIN")
                     .anyRequest()
                     .authenticated())
         .formLogin(
             form ->
                 form.loginPage("/login")
-                    .defaultSuccessUrl("/home", true)
+                        .successHandler(new CustomLoginSuccessHandler())
                     .permitAll()
                     .failureHandler(
                         new SimpleUrlAuthenticationFailureHandler("/login?error=bad_credentials")))
