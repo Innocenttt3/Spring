@@ -9,12 +9,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class MainController {
+
     @Autowired
     private BookService bookService;
 
     @RequestMapping(path = {"/main", "/", "/index"}, method = RequestMethod.GET)
-    public String main(Model model) {
+    public String displayBookList(Model model) {
         model.addAttribute("books", this.bookService.getAllBooks());
-        return "index";
+        return "bookList";
     }
 }
