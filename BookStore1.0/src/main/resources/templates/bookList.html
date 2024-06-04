@@ -15,6 +15,7 @@
             <input type="hidden" th:name="id" th:value="${book.id}" />
             <input type="submit" value="Usuń" />
         </form>
+        <a th:href="@{/cart/add/{bookId}/1(bookId=${book.id})}">Add to Cart</a>
     </div>
 </div>
 </body>

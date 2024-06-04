@@ -1,5 +1,6 @@
 package com.kamilG.service;
 
+import com.kamilG.model.Cart;
 import com.kamilG.model.Role;
 import com.kamilG.model.User;
 import com.kamilG.repository.RoleRepository;
@@ -7,6 +8,8 @@ import com.kamilG.repository.UserRepository;
 import jakarta.transaction.Transactional;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -32,10 +35,8 @@ public class UserService implements IUserService {
       return "failure";
     }
     user.setPassword(passwordEncoder.encode(user.getPassword()));
-    Role role =
-        roleRepository
-            .findByName("USER")
-            .orElseThrow(() -> new RuntimeException("Role USER not found"));
+    user.setCart(new Cart());
+    Role role = roleRepository.findByName("USER").orElse(null);
     if (role != null) {
       user.getRoles().add(role);
     } else {
@@ -45,5 +46,17 @@ public class UserService implements IUserService {
     }
     userRepository.save(user);
     return "success";
+  }
+
+  @Transactional
+  public void save(User user) {
+    userRepository.save(user);
+  }
+
+  @Transactional
+  public User getCurrentUser() {
+    Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+    String username = ((UserDetails) principal).getUsername();
+    return userRepository.findByUsername(username).orElse(null);
   }
 }

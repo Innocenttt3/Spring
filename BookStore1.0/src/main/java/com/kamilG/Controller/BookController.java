@@ -16,7 +16,7 @@ public class BookController {
   @Autowired private BookService bookService;
 
   @RequestMapping(path = "/add", method = RequestMethod.GET)
-  public String addBook(Model model) {
+  public String add(Model model) {
     model.addAttribute("book", new Book());
     return "bookForm";
   }
@@ -38,7 +38,7 @@ public class BookController {
   }
 
   @RequestMapping(path = "update/{id}", method = RequestMethod.POST)
-  public String updateBook(@PathVariable long id, @ModelAttribute Book book, Model model) {
+  public String updateBook(@ModelAttribute Book book) {
     bookService.saveOrUpdateBook(book);
     return "redirect:/main";
   }
