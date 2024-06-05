@@ -22,4 +22,13 @@ This repository is dedicated to storing all the projects created during the clas
    - [Link to directory](https://github.com/Innocenttt3/Spring/tree/master/carRental)
    First task was to create most simple rental to remind basics
 
+5. **Own implementation of Car Rental using hibernate**
+   - [Link to directory](https://github.com/Innocenttt3/Spring/tree/master/carRentalHibernateOwn)
+   Migartion from using CSV file to store data to hibernate (PostgreSQL) database with real time changes
+6. **Simple RestAPI working on previous hibernate solution**
+    - [Link to directory](https://github.com/Innocenttt3/Spring/tree/master/carRentalRestOwn)
+    Using project from previous lab5 to creat RestApi making user to be albe to interact via Postman, offering same functionality as Console UI version
+
+
+
 This repository is continuously evolving as the course progresses.
