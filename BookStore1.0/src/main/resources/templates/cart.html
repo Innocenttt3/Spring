@@ -29,6 +29,9 @@
                 <form th:action="@{/cart/remove/{bookId}(bookId=${item.book.id})}" method="get">
                     <button type="submit">Usun</button>
                 </form>
+                <form th:action="@{/order/submit}" method="post">
+                    <button type="submit">Submit Order</button>
+                </form>
             </td>
         </tr>
         </tbody>
